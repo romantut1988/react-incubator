@@ -29,7 +29,7 @@ function App(props: any) {
 
             {/*<OnOff on={switchOn} onChange={ setSwitchOn }/>*/}
 
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+            {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
 
             {/*<Rating value={3} />*/}
             {/*<Accordion titleValue={'Menu'} collapsed={false} />*/}
