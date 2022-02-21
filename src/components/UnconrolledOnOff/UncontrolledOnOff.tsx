@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
 type PropsType = {
-    // on: boolean
+    onChange: (on: boolean) => void
 }
 
-function UncontrollwdOnOff(props: PropsType) {
-    console.log('UncontrollwdOnOff rendering');
+function UncontrolledOnOff(props: PropsType) {
+    console.log('UncontrolledOnOff rendering');
 
     let [on, setOn] = useState(false);
 
@@ -38,13 +38,23 @@ function UncontrollwdOnOff(props: PropsType) {
         backgroundColor: on ? 'green' : 'red'
     }
 
+    const onClicked = () => {
+        setOn(true)
+        props.onChange(true)
+    }
+
+    const ofClicked = () => {
+        setOn(false)
+        props.onChange(false)
+    }
+
     return <div>
-        <div style={onStyle} onClick={ () => { setOn(true) } } >On</div>
-        <div style={offStyle} onClick={ () => { setOn(false) } } >Off</div>
+        <div style={onStyle} onClick={ onClicked } >On</div>
+        <div style={offStyle} onClick={ ofClicked } >Off</div>
         <div style={indicatorStyle}></div>
     </div>
 }
 
-export default UncontrollwdOnOff;
+export default UncontrolledOnOff;
 
 
