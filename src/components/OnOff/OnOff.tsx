@@ -5,7 +5,7 @@ type PropsType = {
     onChange: (on: boolean) => void
 }
 
-function OnOff(props: PropsType) {
+export function OnOff(props: PropsType) {
     console.log('on: ' + props.on);
 
     const onStyle = {
@@ -41,7 +41,5 @@ function OnOff(props: PropsType) {
         <div style={indicatorStyle}></div>
     </div>
 }
-
-export default OnOff;
 
 
