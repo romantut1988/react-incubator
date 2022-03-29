@@ -15,7 +15,6 @@ export const TrackValueOfUncontrolledInput = () => {
         const actualValue = event.currentTarget.value;
         setValue(actualValue);
     }
-
     return <><input onChange={onChange}/> - {value} </>;
 }
 
@@ -27,10 +26,10 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
         const el = inputRef.current as HTMLInputElement;
         setValue(el.value);
     }
-
     return <><input ref={inputRef} />
         <button onClick={save}>save</button>
         - actual value: {value} </>;
 }
+
 
 export const ControlledInputWithFixedValue = () => <input value={"it-incubator.by"}/>;
