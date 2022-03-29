@@ -6,9 +6,9 @@ type ItemType = {
 }
 
 export type AccordionPropsType = {
-    titleValue: string
-    collapsed: boolean
-    onChange: () => void
+    titleValue?: string
+    collapsed?: boolean
+    onChange?: () => void
     /**
      * Elements that are showed when is opened. Each item should be ItemType
      */
@@ -34,17 +34,17 @@ export function Accordion(props: AccordionPropsType) {
 }
 
 type AccordionTitlePropsType = {
-    title: string
-    onChange: () => void
+    title?: string
+    onChange?: () => void
     color?: string
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitle({title, onChange, color}: AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return (
         <h3
-            style={{color: props.color ? props.color : 'black'}}
-            onClick={(e) => props.onChange()}>--- {props.title} ---</h3>
+            style={{color: color ? color : 'black'}}
+            onClick={(e) => onChange && onChange()}>--- {title} ---</h3>
     );
 }
 
@@ -56,7 +56,7 @@ type AccordionBodyPropsType = {
 function AccordionBody(props: AccordionPropsType) {
     console.log("AccordionBody rendering")
     return <ul>
-        { props.items.map( ( i, index) => <li onClick={() => { props.onClick(i.value) } } key={index}> {i.title} </li>}
+        { props.items.map( ( i, index) => <li onClick={() => { props.onClick(i.value) } } key={index}> {i.title} </li>)}
         </ul>
 }
 

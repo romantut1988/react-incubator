@@ -21,11 +21,14 @@ function App(props: any) {
             <Rating value={ratingValue}
                     onClick={setRatingValue}/>
 
-            <UncontrolledRating />
+            <UncontrolledRating onChange={() => {}}/>
 
             <Accordion titleValue={'Menu'}
                        collapsed={accordionCollapsed}
-                       onChange={ () => { setAccordionCollapsed(!accordionCollapsed)} }/>
+                       onChange={ () => { setAccordionCollapsed(!accordionCollapsed)} }
+                        items={[]}
+                       onClick={() => {}}
+            />
 
             {/*<OnOff on={switchOn} onChange={ setSwitchOn }/>*/}
 
